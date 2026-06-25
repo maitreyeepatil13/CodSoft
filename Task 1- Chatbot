@@ -1,0 +1,40 @@
+import datetime
+import random
+
+print("🤖 ChatBot: Hello! Type 'bye' to end the chat.")
+
+jokes = [
+    "Why did the programmer quit his job? Because he didn't get arrays.",
+    "Why do Python programmers wear glasses? Because they can't C.",
+    "Why was the computer cold? It left its Windows open."
+]
+
+while True:
+    user = input("You: ").lower()
+
+    if user in ["hello", "hi", "hey"]:
+        print("🤖 ChatBot: Hello! How can I help you?")
+
+    elif "how are you" in user:
+        print("🤖 ChatBot: I'm doing great! Thanks for asking.")
+
+    elif "your name" in user:
+        print("🤖 ChatBot: My name is RuleBot.")
+
+    elif "time" in user:
+        current_time = datetime.datetime.now().strftime("%I:%M %p")
+        print(f"🤖 ChatBot: Current time is {current_time}")
+
+    elif "date" in user:
+        current_date = datetime.datetime.now().strftime("%d-%m-%Y")
+        print(f"🤖 ChatBot: Today's date is {current_date}")
+
+    elif "joke" in user:
+        print("🤖 ChatBot:", random.choice(jokes))
+
+    elif user in ["bye", "exit", "quit"]:
+        print("🤖 ChatBot: Goodbye! Have a nice day.")
+        break
+
+    else:
+        print("🤖 ChatBot: Sorry, I don't understand that.")
